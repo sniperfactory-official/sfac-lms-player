@@ -1,4 +1,4 @@
-
+// props 정의, 변경사항 src to url 
 interface SFACPlayerProps {
     url: string; // 미디어 url 받아올 때 값
     playing : boolean,   // 미디어 재생 중인지를 나타내는 불리언 값
