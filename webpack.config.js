@@ -30,4 +30,7 @@ module.exports = {
     react: 'react',
     'react-dom': 'react-dom',
   },
+//   typescript: {
+//     ignoreBuildErrors: true
+// }
 };

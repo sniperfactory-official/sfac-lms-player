@@ -1,6 +1,10 @@
-interface SFACPlayerProps {
+// React의 HTMLAttributes와 HTMLVideoElement의 프로퍼티를 병합한 새로운 인터페이스 정의
+
+ 
+interface SFACPlayerProps extends React.HTMLAttributes<HTMLVideoElement>{
+    
     url: string; // 미디어 url 받아올 때 값
-    playing : boolean,   // 미디어 재생 중인지를 나타내는 불리언 값
+    playing?: boolean,   // 미디어 재생 중인지를 나타내는 불리언 값
     controls: boolean, // 미디어 재생 컨트롤러를 보여줄지를 나타내는 불리언 값
     volume: number, // 미디어의 볼륨을 나타내는 숫자 값
     muted: boolean,  // 미디어의 음소거 여부를 나타내는 불리언 값
@@ -16,8 +20,8 @@ interface SFACPlayerProps {
     wrapper: string,   // 미디어 플레이어를 감싸는 컨테이너 엘리먼트를 정의하는 문자열 또는 함수 또는 `{ render: func.isRequired }` 형태의 객체
   
   }
-  
-  
+
+
   // 빈 함수(noop)를 정의하여 기본 이벤트 핸들러로 사용함
   const noop = () => {}
   
