@@ -1,6 +1,9 @@
 interface SFACPlayerProps {
     url: string;
     playing: boolean;
+    customLogo?: string;
+    isPlayerInitialized?: boolean;
+    initMessage?: string;
     controls: boolean;
     volume: number;
     muted: boolean;
@@ -14,6 +17,15 @@ interface SFACPlayerProps {
     fallback?: Node;
     oEmbedUrl: string;
     wrapper: string;
+    currentTime: number;
+    totalDuration: number;
+    onBarClick: (time: number) => void;
+    isPlaying: boolean;
+    onPlayPauseToggle: () => void;
+    onVolumeChange: (volume: number) => void;
+    onPlaybackRateChange: (rate: number) => void;
+    remaining: number;
+    showLectureInfo?: boolean;
 }
 export declare const defaultProps: {
     playing: boolean;

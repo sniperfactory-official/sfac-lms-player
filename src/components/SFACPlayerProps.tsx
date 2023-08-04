@@ -1,10 +1,15 @@
 interface SFACPlayerProps {
+  // 초기화면
   url: string; // 미디어 url 받아올 때 값
   playing: boolean; // 미디어 재생 중인지를 나타내는 불리언 값
+  customLogo?: string; // 커스텀 로고 이미지 URL
+  isPlayerInitialized?: boolean; // 비디오 플레이어 초기화 상태
+  initMessage?: string; // 초기화 메시지 설정 (default: "플레이어를 초기화 중입니다...")
+
   controls: boolean; // 미디어 재생 컨트롤러를 보여줄지를 나타내는 불리언 값
-  volume: number; // 미디어의 볼륨을 나타내는 숫자 값
+  volume: number; // 플레이어 볼륨 (0 ~ 1 사이, ex. 0.5 볼륨 조절)
   muted: boolean; // 미디어의 음소거 여부를 나타내는 불리언 값
-  playbackRate: number; // 미디어의 재생 속도를 나타내는 숫자 값
+  playbackRate: number; // 비디오 재생 속도
   // width: ([string, number]),  // 미디어 플레이어의 가로 크기를 나타내는 문자열 또는 숫자 값
   width: number; // 미디어 플레이어의 가로 크기를 나타내는 문자열 또는 숫자 값
   height: number; // 미디어 플레이어의 세로 크기를 나타내는 문자열 또는 숫자 값 -- 추후 하나 선택시 수정
@@ -15,6 +20,19 @@ interface SFACPlayerProps {
   fallback?: Node; // 미디어를 재생할 수 없을 때 대체로 사용될 React 노드를 받음
   oEmbedUrl: string; // URL을 oEmbed 형식으로 변환하는 데 사용되는 문자열
   wrapper: string; // 미디어 플레이어를 감싸는 컨테이너 엘리먼트를 정의하는 문자열 또는 함수 또는 `{ render: func.isRequired }` 형태의 객체
+
+  // 플레이어바
+  currentTime: number; // 현재 재생 위치 (단위: 초)
+  totalDuration: number; // 비디오 총 길이 (단위: 초)
+  onBarClick: (time: number) => void; // 비디오 바 클릭 시 해당 시간으로 이동하는 콜백 함수
+  isPlaying: boolean; // 현재 재생 상태
+  onPlayPauseToggle: () => void; // 재생/일시정지 토글 콜백 함수
+  onVolumeChange: (volume: number) => void; // 볼륨 조절 콜백 함수
+  onPlaybackRateChange: (rate: number) => void; // 재생 속도 변경 콜백 함수
+  remaining: number; // 남은 시간 (단위: 초)
+
+  // 초기화 이후
+  showLectureInfo?: boolean; // 강의 시간, 수강 시간, 배속 등을 표시할지 여부
 }
 
 // 빈 함수(noop)를 정의하여 기본 이벤트 핸들러로 사용함

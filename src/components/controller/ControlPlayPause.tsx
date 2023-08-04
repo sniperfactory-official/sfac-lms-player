@@ -3,18 +3,18 @@ import React from "react";
 interface ControlPlayPauseProps {
   onPlay: () => void;
   onPause: () => void;
-  playing: boolean;
+  isPlaying: boolean;
 }
 
 const ControlPlayPause: React.FC<ControlPlayPauseProps> = ({
   onPlay,
   onPause,
-  playing,
+  isPlaying,
 }) => {
   return (
     <>
-      <button onClick={playing ? onPause : onPlay}>
-        {playing ? "일시정지" : "재생"}
+      <button onClick={isPlaying ? onPause : onPlay}>
+        {isPlaying ? "일시정지" : "재생"}
       </button>
     </>
   );
