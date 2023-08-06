@@ -22,14 +22,17 @@ interface SFACPlayerProps {
   wrapper: string; // 미디어 플레이어를 감싸는 컨테이너 엘리먼트를 정의하는 문자열 또는 함수 또는 `{ render: func.isRequired }` 형태의 객체
 
   // 플레이어바
-  currentTime: number; // 현재 재생 위치 (단위: 초)
-  totalDuration: number; // 비디오 총 길이 (단위: 초)
-  onBarClick: (time: number) => void; // 비디오 바 클릭 시 해당 시간으로 이동하는 콜백 함수
-  isPlaying: boolean; // 현재 재생 상태
-  onPlayPauseToggle: () => void; // 재생/일시정지 토글 콜백 함수
-  onVolumeChange: (volume: number) => void; // 볼륨 조절 콜백 함수
-  onPlaybackRateChange: (rate: number) => void; // 재생 속도 변경 콜백 함수
-  remaining: number; // 남은 시간 (단위: 초)
+  // currentTime: number; // 현재 재생 위치 (단위: 초)
+  // totalDuration: number; // 비디오 총 길이 (단위: 초)
+  // onBarClick: (time: number) => void; // 비디오 바 클릭 시 해당 시간으로 이동하는 콜백 함수
+  // isPlaying: boolean; // 현재 재생 상태
+  // onPlayPauseToggle: () => void; // 재생/일시정지 토글 콜백 함수
+  // onVolumeChange: (volume: number) => void; // 볼륨 조절 콜백 함수
+  // onPlaybackRateChange: (rate: number) => void; // 재생 속도 변경 콜백 함수
+  // remaining: number; // 남은 시간 (단위: 초)
+  onPlay: () => void;
+  onPause: () => void;
+  isPlaying: boolean;
 
   // 초기화 이후
   showLectureInfo?: boolean; // 강의 시간, 수강 시간, 배속 등을 표시할지 여부
