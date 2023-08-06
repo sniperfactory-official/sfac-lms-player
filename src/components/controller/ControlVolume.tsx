@@ -34,7 +34,11 @@ const ControlVolume: React.FC<ControlVolumeProps> = ({
         step={0.01}
         value={isDragging ? volume : 0}
         onMouseDown={handleDragStart}
+        onMouseUp={handleDragEnd}
+        onChange={handleVolumeChange}
       />
     </div>
   );
 };
+
+export default ControlVolume;

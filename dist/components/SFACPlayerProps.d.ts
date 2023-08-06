@@ -17,14 +17,9 @@ interface SFACPlayerProps {
     fallback?: Node;
     oEmbedUrl: string;
     wrapper: string;
-    currentTime: number;
-    totalDuration: number;
-    onBarClick: (time: number) => void;
+    onPlay: () => void;
+    onPause: () => void;
     isPlaying: boolean;
-    onPlayPauseToggle: () => void;
-    onVolumeChange: (volume: number) => void;
-    onPlaybackRateChange: (rate: number) => void;
-    remaining: number;
     showLectureInfo?: boolean;
 }
 export declare const defaultProps: {

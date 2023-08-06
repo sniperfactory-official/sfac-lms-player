@@ -3,10 +3,12 @@ import "./styles/sfac-player.css";
 import SFACPlayerProps from "./SFACPlayerProps";
 import ControlPlayPause from "./controller/ControlPlayPause";
 import ControlPlaybackRate from "./controller/ControlPlaybackRate";
+import ControlVolume from "./controller/ControlVolume";
 
 const SFACPlayer: React.FC<SFACPlayerProps> = ({ url }) => {
   const [playing, setPlaying] = useState(false);
   const [playbackRate, setPlaybackRate] = useState(1);
+  const [volume, setVolume] = useState(1);
 
   const handlePlay = () => {
     setPlaying(true);
@@ -18,6 +20,10 @@ const SFACPlayer: React.FC<SFACPlayerProps> = ({ url }) => {
 
   const handlePlaybackRate = (rate: number) => {
     setPlaybackRate(rate);
+  };
+
+  const handleVolumeChange = (newVolume: number) => {
+    setVolume(newVolume);
   };
 
   return (
@@ -37,6 +43,8 @@ const SFACPlayer: React.FC<SFACPlayerProps> = ({ url }) => {
         playbackRate={playbackRate}
         onPlaybackRateChange={handlePlaybackRate}
       />
+
+      <ControlVolume volume={volume} onVolumeChange={handleVolumeChange} />
     </div>
   );
 };
