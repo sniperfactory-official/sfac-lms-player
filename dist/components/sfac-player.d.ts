@@ -1,5 +1,7 @@
 import React from "react";
-import "./styles/sfac-player.css";
-import SFACPlayerProps from "./SFACPlayerProps";
+interface SFACPlayerProps {
+    src: string;
+    className?: string;
+}
 declare const SFACPlayer: React.FC<SFACPlayerProps>;
 export default SFACPlayer;

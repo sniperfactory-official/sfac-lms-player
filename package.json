@@ -31,5 +31,9 @@
     "typescript": "^5.1.6",
     "webpack": "^5.88.2",
     "webpack-cli": "^5.1.4"
+  },
+  "dependencies": {
+    "@zeit/next-css": "^1.0.1",
+    "classnames": "^2.3.2"
   }
 }

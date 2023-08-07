@@ -30,9 +30,9 @@ interface SFACPlayerProps {
   // onVolumeChange: (volume: number) => void; // 볼륨 조절 콜백 함수
   // onPlaybackRateChange: (rate: number) => void; // 재생 속도 변경 콜백 함수
   // remaining: number; // 남은 시간 (단위: 초)
-  onPlay: () => void;
-  onPause: () => void;
-  isPlaying: boolean;
+  // onPlay: () => void;
+  // onPause: () => void;
+  // isPlaying: boolean;
 
   // 초기화 이후
   showLectureInfo?: boolean; // 강의 시간, 수강 시간, 배속 등을 표시할지 여부
